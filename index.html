@@ -15,9 +15,16 @@
     />
     <!-- toastify css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
+
+    <style>.github-fork-ribbon:before { background-color: #333; }</style>
   </head>
   <body class="bg-dark">
     <main class="container-fluid">
+
+      <a class="github-fork-ribbon" href="http://url.to-your.repo" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+
       <div class="row pt-3 px-3">
         <div class="col-md-3">
           <div class="card">
@@ -121,17 +128,17 @@
               <button type="button" class="btn-close btn-close-dark text-light" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body border-0">
-              <form>
+              <form id="form-cadastro" onSubmit="return false">
                 <div class="mb-1 mt-0">
                   <label for="inputProduto" class="form-label">Nome do produto</label>
-                  <input type="text" class="form-control" id="inputProduto">
+                  <input type="text" class="form-control" id="inputProduto" required>
                 <div class="mb-1">
                   <label for="inputPreco" class="form-label">Pre&ccedil;o</label>
-                  <input type="number" min="0.05" step="0.10" placeholder="0.00" class="form-control" id="inputPreco">
+                  <input type="number" min="0.05" step="0.05" placeholder="0.00" class="form-control" id="inputPreco" required>
                 </div>
                 <div class="mb-1">
                   <label for="inputQuantidade" class="form-label">Quantidade</label>
-                  <input type="number" min="1" step="1" placeholder="0" class="form-control" id="inputQuantidade">
+                  <input type="number" min="1" step="1" placeholder="0" class="form-control" id="inputQuantidade" required>
                 </div>
                 <div class="mb-4">
                   <label for="inputImagem" class="form-label">Url da imagem</label>
@@ -140,7 +147,7 @@
               </form>
             </div>
             <div class="modal-footer border-0 justify-content-between">
-              <button id="btnCadastro" type="button" class="btn btn-primary">Cadastrar</button>
+              <button id="btnCadastro" type="submit" form="form-cadastro" class="btn btn-primary">Cadastrar</button>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
             </div>
           </div>

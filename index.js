@@ -2,50 +2,51 @@ const inputProduto = document.querySelector("#inputProduto");
 const inputPreco = document.querySelector("#inputPreco");
 const inputQuantidade = document.querySelector("#inputQuantidade");
 const inputImagem = document.querySelector("#inputImagem");
-const btnCadastro = document.querySelector("#btnCadastro");
+const formCadastro = document.querySelector("#form-cadastro");
 
-const addEventoExcluir = () => {
-  const btnsExcluir = document.querySelectorAll(".btn-excluir");
-
-  btnsExcluir.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.parentElement.parentElement.remove();
-      Toastify({
-        text: "O item foi removido com sucesso!",
-        duration: 3000,
-        close: true,
-        gravity: "top", // `top` or `bottom`
-        position: "right", // `left`, `center` or `right`
-        stopOnFocus: true, // Prevents dismissing of toast on hover
-        style: {
-          background: "linear-gradient(to right, #00b09b, #96c93d)",
-        },
-        onClick: function () {}, // Callback after click
-      }).showToast();
-    });
+const addEventoExcluir = (btn) => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.parentElement.remove();
+    Toastify({
+      text: "O item foi removido com sucesso!",
+      duration: 3000,
+      close: true,
+      gravity: "top", // `top` or `bottom`
+      position: "right", // `left`, `center` or `right`
+      stopOnFocus: true, // Prevents dismissing of toast on hover
+      style: {
+        background: "linear-gradient(to right, #00b09b, #96c93d)",
+      },
+      onClick: function () {}, // Callback after click
+    }).showToast();
   });
 };
 
-addEventoExcluir();
+const addEventoVisualizar = (btn) => {
+  btn.addEventListener("click", () => {
+    document.querySelector("#imagemModalLabel").innerHTML = btn.dataset.bsName;
+    
+    if (btn.dataset.bsImage === "" || !btn.dataset.bsImage) {
+        document.querySelector("#imagemModal").setAttribute("src", "./assets/images/placeholderProduto.png");
+    }else{
+        document.querySelector("#imagemModal").setAttribute("src", btn.dataset.bsImage);
+    }
 
-const addEventoVisualizar = () => {
-    const btnsVisualizar = document.querySelectorAll(".btn-visualizar");
-
-  btnsVisualizar.forEach((btn) => {
-    btn.addEventListener("click", () => {
-        document.querySelector("#imagemModalLabel").innerHTML = btn.dataset.bsName;
-        
-        if (btn.dataset.bsImage === "" || !btn.dataset.bsImage) {
-            document.querySelector("#imagemModal").setAttribute("src", "./assets/images/placeholderProduto.png");
-        }else{
-            document.querySelector("#imagemModal").setAttribute("src", btn.dataset.bsImage);
-        }
-
-    });
-  });
+});
 }
 
-addEventoVisualizar();
+const btnsExcluir = document.querySelectorAll(".btn-excluir");
+
+btnsExcluir.forEach((btn) => {
+  addEventoExcluir(btn);
+});
+
+const btnsVisualizar = document.querySelectorAll(".btn-visualizar");
+
+btnsVisualizar.forEach((btn) => {
+  addEventoVisualizar(btn);
+});
+
 
 const addTd = (row, innerHTML = "") => {
   const newTd = document.createElement("td");
@@ -61,7 +62,8 @@ const setAttributes = (el, attrs) => {
   }
 };
 
-btnCadastro.addEventListener("click", () => {
+formCadastro.addEventListener("submit", (e) => {
+  //parou de funcionar quando mudei pra submit. arrumar
   const tBody = document.querySelector("tbody");
   const newRow = document.createElement("tr");
   tBody.appendChild(newRow);
@@ -96,8 +98,8 @@ btnCadastro.addEventListener("click", () => {
   btnExcluir.classList.add("btn", "btn-danger", "btn-excluir");
   btnExcluir.innerHTML = "Excluir";
 
-  addEventoExcluir();
-  addEventoVisualizar();
+  addEventoExcluir(btnExcluir);
+  addEventoVisualizar(btnVisualizar);
 
   //limpar form
   inputProduto.value = "";
