@@ -13,28 +13,32 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" href="styles/style.css">
     <!-- toastify css -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
+    <!-- GitHub Ribbon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
-
     <style>.github-fork-ribbon:before { background-color: #333; }</style>
+
   </head>
-  <body class="bg-dark">
+  <body>
     <main class="container-fluid">
 
-      <a class="github-fork-ribbon" href="http://url.to-your.repo" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
+      <!-- GitHub Ribbon -->
+      <a class="github-fork-ribbon" href="https://github.com/Beatriz-Sanchez/marketplace-dashboard" data-ribbon="Fork me on GitHub" title="Fork me on GitHub">Fork me on GitHub</a>
 
       <div class="row pt-3 px-3">
         <div class="col-md-3">
-          <div class="card">
+          <div class="card bg-secondary border-0 menu mb-4">
             <div class="card-body text-center">
               <h3>Pipoco do Trovão</h3>
               <h1>Dashboard</h1>
               
               <img src="./assets/images/user.jpg" class="img-fluid rounded-circle my-3" alt="...">
               <h5 class="card-title">Funcionário</h5>
-              <h6 class="card-subtitle mb-1 text-muted">função</h6>
+              <h6 class="card-subtitle mb-1">função</h6>
             </div>
             <div class="card-body">
               <ul>
@@ -56,14 +60,14 @@
 
         <!-- SEGUNDA COLUNA -->
         <div class="col-md-9">
-          <div class="card">
+          <div class="card mb-3">
             <div class="card-body">
               <h5 class="card-title">Produtos</h5>
             </div>
           </div>
-          <div class="card">
-            <div class="card-body">
-              <table class="table">
+          <div class="card card-produtos">
+            <div class="card-body overflow-auto">
+              <table class="table text-center">
                 <thead>
                   <tr>
                     <th scope="col">Produto</th>
@@ -93,6 +97,35 @@
                     <td>R$ 70,00</td>
                     <td>50</td>
                     <td><button type="button" class="btn btn-primary btn-visualizar" data-bs-toggle="modal" data-bs-target="#modal-imagem" data-bs-name="Produto3" data-bs-image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAEdlJREFUeF7tnHl0VdUVxjcQEAhhDGMSSJhnEkggYVJr1Y7apba2tdrBZa3aap1Fi1bRspzqVLRdVttVa62r1rbW2qpFK0PCTAKBQCAQQhgCIQlDSICEdO1j7vPm5r737j3vcd47Od/9D3LP3Xv/9vnumfZ9ncq/c3UL4QIBEHAl0AkCQc8AgeAEIBD0DhAIQQACQfcAAQgEfQAE5AhgBJHjhlaGEIBADEk0wpQjAIHIcUMrQwhAIIYkGmHKEYBA5LihlSEEIBBDEo0w5QhAIHLc0MoQAhCIIYlGmHIEIBA5bmhlCAEIxJBEI0w5AhCIHDe0MoQABGJIohGmHAEIRI4bWhlCAAIxJNEIU44ABCLHDa0MIQCBGJJohClHAAKR44ZWhhCAQAxJNMKUIwCByHFDK0MIQCCGJBphyhGAQOS4oZUhBCAQQxKNMOUIQCBy3NDKEAIQiCGJRphyBCAQOW5oZQgBCMSQRCNMOQIQiBw3tDKEAARiSKIRphwBCESOG1oZQgACMSTRCFOOAAQixw2tDCEAgRiSaIQpRwACkeOGVoYQgEAMSTTClCMAgchxQytDCEAghiQaYcoRgEDkuKGVIQQgEEMSjTDlCEAgctzQyhACEIghiUaYcgQgEDluaGUIAQjEkEQjTDkCEIgcN7QyhAAEYkiiEaYcAQhEjhtaGUIAAjEk0QhTjgAEIscNrQwhAIEYkmiEKUcAApHjhlaGEIBADEk0wpQjAIHIcUMrQwhAIIYkGmHKEYBA5LihlSEEIBBDEo0w5QhAIHLc0MoQAhCIIYlGmHIEIBA5bmhlCAEIxJBEI0w5AhCIHDe0MoQABGJIohGmHAEIRI4bWhlCAAIxJNEIU44ABCLHDa0MIQCBGJJohClHAAKR44ZWhhCAQAxJNMKUIwCByHFDK0MIQCCGJBphyhGAQOS4oZUhBCAQQxKNMOUIQCBy3NDKEAIQiCGJRphyBCAQOW5oZQgBCMSQRCNMOQIQiBw3tDKEAARiSKIRphwBCESOG1oZQiBigfx99x766cpVvnAldk2gSf360fCkXpQ7aCCdP2woJffoTp18PUW/m5/fvIV+WVQsHP/2mFH0YHYWde/SRb9AYuDx2ZYW2nH0GL27p4JWHKiijdVHhBeT+vejCf360uXpw2nWoEHUrUvnqHoXE4E4I2DBXDd2DN0wYRz1735eVAOMp4fFg0BaiKjs6DFaebCKrh49UguBHjh5kp4q3Ex/3VUeMp3TBvSne7OmUt6QwVF72caFQKyo5w0dQotmTqf0pKR46tdR8yXWAqlpPEUvl2ynP5TuoMvTR2gxgu06dpzuKVhD6w5Xe8oDv2x/MSubLksfERWRRFUgGUlJdNvUSTSkZ4+QwZw5e5a21R2lVQcP0dJ9+9vc+63RI2lhdhb1TEjwBESnm2ItkFjb95srFvSC1evo/b2Voil3/mvGjKZrxoyilF6JlNCpEx09fZo+2LuPXtpSQiwmvlISE+m5ubmUPTDZr8l290dVIDwXXDJvNo3s7W0E4Hnl//YfoIVrNtC++voAhF/Pn0M8mnS0K9YdNNb2/ebzzZ276N5VawP94sEZWXTlqAwhDOe18+gxuqtgDRW2rk2uGpVBj+RMj/hFG1OBcJA8J36nfA/dv3od1Z9pEnF/f/xYWpA1LeoLLr8Jivb9se6gsbbvhyePDPcUrA2MHl42Nf5TUUk/WrZSmBnUowe9cuE8mtK/nx+z8TWCWN44YeQOHiSGyME9Qk/VIoo8Bo1j3UFjbd8P8s01tXT9x8vpUEODaPbaReeHnVWUHTtGtyzLF9N3vn41L4++MmK4H7PxKZDmlhZ6umgzvVhcIhwc37cPLZk/m0b17h1RcPHWONYdNNb2/eRjf/1JsT4tOlJDhxsa6eEc3rzpFfIRvAa5ZXk+ldTWifuenZNLX8sY4cdsfAqEvbInj//91qUXtVlk8S7GVe8vFQFYw+3JM030Ztku+kvZbrFAy0oeQJ9LGUZXjkynYYk92wVr30tfXXWYttTWimld327daMbAZJozdDBdkpoiFoB+zmQam5tp7aHD9I/yCtpwuFr4ws/k5311xHC6IGWo2E710kG93OMMzM7GuQ60/y1UT3Hytt9rj48735aaWvFnXmtOH5hMFw4bSucPG0K9unaNqDNG2nhbbR3dtCyfdh//dLH+8gVz6eLUlIgeG/M1iOW9vWO4jSBOgVw3djQ9tqGIlh842A7Az2Zk0vUTxrXp5Ftr6+jpws3tds2cjf2cyfD6iQXxyLqN4k0X7OLdlJ/nTKeP9u0Pe1AYTwJpammh9/bspWc3FQd2iILFyGLhHcwvpqXFZO3Iufj9tlJ6eN1G4eLoPr3pxXmzaWzfPvoLhN/iC9eup7dbD4L4bf783FyxXWdddoFckpZCLS1EH1buaxe8EwyDe7+ikhatLwzslHkhxp36ibyZQXfk+LnvllfQwjXrqe706bCPzEweQH26daNP9h9oMwo6T9LjRSAnm5poSXEJLSneGjY2+w0/GD+W7sqcEvHukR+jbruht0yeSLdPm+y64+Xn2XExgqw5dJh+vLwgsCBz27FwmyrwdOL+6dPEySkXGFTW11NRdQ1dmpYaeIutrjpEd+SvabONzHvpXx+VQRm9kwRAnkJsPlJLr5XuoHfKKwL8Lk5LocWzsim5e/d2TDcdqRHDubU9zVOqmyZPoCsy0kXZTEtLC1U1NNBbZeX0Ssn2diIKtisTbYHYHff6bB45Xt66jR7fuCnQnEeIGyeOF1NYjo+vulOnadmBA/RqSWmbEZRPs2+YOD7izhmuI9c3NdHWmjpfeQv3TOffYy6Q8uPHxTmIfarE5yBfGJ7axlenQHh0WTIvj/jNHOw60thI961aFxhpuM1js2aI2i+3Ncbp5rP06rZSeqF4S2DL2e1NxILiadWfdpQJ0/zcJ/NyXEsceKQpOFhFdxesbTOCxbNAnC8sFgVXONhHdDvzgycbaNH6jfSvPXvFf/M09VyeZTF3PhZwXtb0+MZJ48UaMBpXTATCyq88US/2uN/cubtNx/nyiDRRKsDTEfvlFIiXsxL7vjg/65nWXY1QC3AWyZOFm0RJBl9uc1nnFuTi3Bz65uiRQRf2LBIu6rzdVtQZrwLh+BdvLKLfbSsV8fMo/cLcPMEh1MX55KJVqyQkWgd1bjadGzrWPTwt/u64MXRhytCobRhEVSCRKpZHg6fyZromwymQcHvczrc8T7ueyMtpJzw3n0vrjtLNy/OJT2f5Wti66Lfu5SkTr2n48npmw/v5d+SvFpWofMWrQJxbpW4bHsHybD/5jtZBndPWqeZmenR9Ib1WujNod+Pp4EPZWTQ/yEzBTz+NG4FYOz2Tg5x82gXCQ+kfL7pAbOsGu3j+f9uKVbSq6pBrJw8FqaGpmR5et4H+vHNXu87sFB7vlt2XNZW6dg5dZu0864lXgfBU99qln4i4/XZy50FdNM4hnHlijtWNjeJFxxscvF7ad6KeXt9RRq/v2BmYGvMU67FZ2cQzkkiumAqEO/qcIYPFwtY6KwgWTKi9frc2zj1xLyex9ufYh/H5w4bQc3PyqN953aj21Gm6bWUBLdv/6fayc3QJlQz7tzPxKhD7/N7r6GjF7GRzx7TJdOuUSZH0T89teRrLO4QPrF4fmLLzS5dFmtrrs91Qzw9svTGqAvFazdsjIYHSEhMpqVvXsG9eKyC/AnFOyUIdhLlBs3dme0fhXatbV6yi9a3l137ekrz4/cYHH8X1FCvYi8FLx3KOrjdPnkB3TptCXVyKC708z+89LBIe9Re0Fjhy+8dzc8R3L7JXVAXit5rXj9OxFIg9rkjKGdyqAc71OUiwUdHLCGYfOb3kyikQLwWGXp7r5x7n1PrasaOJ11HnSX65CYEEoc9fr92Zv1r81d5RIhlBOrpAnGs3lVMsK41OkV4xMp0W5cwQW88yV4cViHPBeK7WIPdkTiWeSni5+HtqPhDly8sbnM8fnpkzK+zOm9fR1ctBof3FoNMaJJhAvDIMlr8OK5BIdrGcpS/2zuzcZvQzjbBvD3sRiNcpjn29FGqa60UgkexiOTdG/KzP7B2Uvzj9d0WlKADlrXY+g3lgRqan7+dD5c7LS8x5T4cVyLk8B7Hv9PDZDR+kpYXZKfH6AZC9s88dOpien5MX8ocsnNvHkQokXs5B+NOHJwo/LXXxypjvDXeG5VckHVYgDCIaJ+l8FsBl0/yLGdblTALv1HAdltunoFYbfjPz127WV5PBRhD7NMzNtjPBe0/U009WFAQ+NY1UINE6SfdzMOvWaflXV374yYoAL57KcglJqB0xZxWEF37hBNOhBRKNWiz+KaK7M6e2KeHmw6lniooDla68AHx0Zrb4babOLluaXJrCVb/W99Kh1iDOMhbehVkwfZprdSxXET++oYjeaD3Q5Od6FQiXxjyUPZ16JLT/Xa5o1GI9OzuXuNhT9uIRl+utrPouL3V0vy3ZHhh12K5b7vz606EFwjAiqeYNVfrCBXpcW1XQelLPIrlqZAZ9b9wYSkvqJd501Q2N9PbucnqpuMRzNS+XmT+4dgO9VbY7kEv+AIyrY3kubv2SB//YhVVFO6B7d2psbhJv21ACsa+B2N97M6fSl0akUZdOnalX14TAmVSk1byhRO2ng/LmA1dD2H/Qw/mrJjyV5srq32zZ1uZbn1CV2H586PACieR7EP7IKVjpC0PeXndU/OqGfWQIBp87JH+t+Lfde0LuYrmJOlRCue6IR7g3dpaJ0/1QArEvwJ3PdH59J/s9CIvjzswpUammlc1dNH9frcMLxOoI5+KLQn62l1/947og/q2v1MSedPWHH4cVCHeM/INVoijP+r7aTSRW/RpPP6zyl1AC4U6/eEORa6GfW8lMvHxR6Dd32pe7+xnirHu97vWHejYnnL+n/m/lPrJ/k84dbGK/vqJM+tK0FOIpi5+Lv2grrK6hf+6pIJ6/sw0eMTIHDBC/xHFZ+nDxjbyXg0K7Xe7QSyv3i88CNlbXiKkG+5qV3J+4nJzPKfgk3l4DFa6agZ/JX26yr8zAukKVhZw4c0bE9V5FpRCs9U26/XdxcwYN9LQN64er/V7OHY/U/NlywcFDgd/mtXLH38R/PjUl7I8W+rUf8Qji1yDuBwGdCEAgOmULvionAIEoRw6DOhGAQHTKFnxVTgACUY4cBnUiAIHolC34qpwABKIcOQzqRAAC0Slb8FU5AQhEOXIY1IkABKJTtuCrcgIQiHLkMKgTAQhEp2zBV+UEIBDlyGFQJwIQiE7Zgq/KCUAgypHDoE4EIBCdsgVflROAQJQjh0GdCEAgOmULvionAIEoRw6DOhGAQHTKFnxVTgACUY4cBnUiAIHolC34qpwABKIcOQzqRAAC0Slb8FU5AQhEOXIY1IkABKJTtuCrcgIQiHLkMKgTAQhEp2zBV+UEIBDlyGFQJwIQiE7Zgq/KCUAgypHDoE4EIBCdsgVflROAQJQjh0GdCEAgOmULvionAIEoRw6DOhGAQHTKFnxVTgACUY4cBnUiAIHolC34qpwABKIcOQzqRAAC0Slb8FU5AQhEOXIY1IkABKJTtuCrcgIQiHLkMKgTAQhEp2zBV+UEIBDlyGFQJwIQiE7Zgq/KCUAgypHDoE4EIBCdsgVflROAQJQjh0GdCEAgOmULvionAIEoRw6DOhGAQHTKFnxVTgACUY4cBnUiAIHolC34qpwABKIcOQzqRAAC0Slb8FU5AQhEOXIY1IkABKJTtuCrcgIQiHLkMKgTAQhEp2zBV+UEIBDlyGFQJwIQiE7Zgq/KCUAgypHDoE4EIBCdsgVflROAQJQjh0GdCEAgOmULvionAIEoRw6DOhGAQHTKFnxVTgACUY4cBnUiAIHolC34qpwABKIcOQzqRAAC0Slb8FU5AQhEOXIY1IkABKJTtuCrcgIQiHLkMKgTAQhEp2zBV+UEIBDlyGFQJwIQiE7Zgq/KCUAgypHDoE4EIBCdsgVflROAQJQjh0GdCEAgOmULvionAIEoRw6DOhGAQHTKFnxVTgACUY4cBnUiAIHolC34qpwABKIcOQzqRAAC0Slb8FU5AQhEOXIY1InA/wG/JiF+ngKYMwAAAABJRU5ErkJggg==">Visualizar</button></td>
+                    <td><button type="button" class="btn btn-danger btn-excluir">Excluir</button></td>
+                  </tr>
+                  <tr>
+                    <td>Produto4</td>
+                    <td>R$ 90,00</td>
+                    <td>150</td>
+                    <td><button type="button" class="btn btn-primary btn-visualizar" data-bs-toggle="modal" data-bs-target="#modal-imagem" data-bs-name="Produto3" >Visualizar</button></td>
+                    <td><button type="button" class="btn btn-danger btn-excluir">Excluir</button></td>
+                  </tr>
+                  <tr>
+                    <td>Produto5</td>
+                    <td>R$ 95,00</td>
+                    <td>180</td>
+                    <td><button type="button" class="btn btn-primary btn-visualizar" data-bs-toggle="modal" data-bs-target="#modal-imagem" data-bs-name="Produto3" 
+                    data-bs-image="https://picsum.photos/200/200">Visualizar</button></td>
+                    <td><button type="button" class="btn btn-danger btn-excluir">Excluir</button></td>
+                  </tr>
+                  <tr>
+                    <td>Produto6</td>
+                    <td>R$ 40,00</td>
+                    <td>70</td>
+                    <td><button type="button" class="btn btn-primary btn-visualizar" data-bs-toggle="modal" data-bs-target="#modal-imagem" data-bs-name="Produto3" >Visualizar</button></td>
+                    <td><button type="button" class="btn btn-danger btn-excluir">Excluir</button></td>
+                  </tr>
+                  <tr>
+                    <td>Produto7</td>
+                    <td>R$ 65,00</td>
+                    <td>50</td>
+                    <td><button type="button" class="btn btn-primary btn-visualizar" data-bs-toggle="modal" data-bs-target="#modal-imagem" data-bs-name="Produto3" >Visualizar</button></td>
                     <td><button type="button" class="btn btn-danger btn-excluir">Excluir</button></td>
                   </tr>
                 </tbody>

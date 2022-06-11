@@ -1,60 +1,78 @@
-a{
-  text-decoration: none;
-  color: #77a
-}
-a:hover{
-  text-decoration: none;
-  color: rgba(119,119,170,.50)
-}
-
-.card{
-  margin-bottom: 1rem;
-  background-color: #334;
-  color: #77a
-}
-.text-muted {
-  color: rgba(119,119,170,.50)!important;
+:root{
+    --primary: rgb(96, 184, 134);
+    --secondary: rgb(201, 201, 201);
+    --bg-secondary: #43494e;
+    --danger: rgb(163, 18, 47);
+    --dark: black;
 }
 
-.form-control {
-  background-color:  rgba(119,119,170,.50);
-  border-color: #334
+body {
+    background-color:gainsboro;
 }
 
-.form-control:focus{
-  background-color:  rgba(119,119,170,.50);
-  border: none;
-  border-color: #77c;
-  box-shadow: none;
-  outline: #77c solid 2px;
+a {
+    text-decoration: none;
+    color:var(--secondary);
+    font-size: larger;
+}
+a:hover {
+    color:var(--primary);
+}
+.btn{
+    border: none;
+}
+.card {
+    border: none;
+    box-shadow: 2px 2px 5px 0px rgba(77, 75, 75, .5);
 }
 
-.btn-primary{
-  background-color: #446!important;
-  border: none;
+.bg-secondary{
+    background-color: var(--bg-secondary)!important;
 }
 
-.form-label{
-  color: "white"!important
+.btn-danger{
+    background-color: var(--danger);
 }
 
-p:hover{
-  cursor: default;
+.btn-danger:hover{
+    background-color: rgb(123, 9, 32);
 }
 
-.rounded-circle{
-  border: 5px solid #77c
+h1, h3{
+    color: var(--primary)
 }
 
-.list-group-item{
-  font-size: 1.2em;
-  margin-left: -10px;
+.menu{
+    padding: 15% 0;
 }
 
-.modal-content{
-  background-color: #334;
-  color: rgba(119,119,170)
+.menu .card-title, .card-subtitle{
+    color: var(--secondary)
 }
-.modal-content > hr{
-  opacity: 0;
+
+.menu .card-title{
+    opacity: 0.8
+}
+
+.menu .card-subtitle{
+    opacity: 0.5
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color:seagreen
+}
+.btn-primary:focus {
+    background-color:#2e8b57;
+    border: none;
+    outline: none;
+}
+
+.github-fork-ribbon:before { background-color: #333!important;}
+
+.card-produtos{
+    padding: 15px;
 }
